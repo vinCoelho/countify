@@ -23,8 +23,8 @@ function Countdown() {
         }
       }
     }, 1000);
-  } else if (!isActive && seconds !== 0) { clearInterval(interval); }
-  return () => clearInterval(interval);
+    } else if (!isActive && seconds !== 0) { clearInterval(interval); }
+    return () => clearInterval(interval);
   }, [isActive, seconds, minutes]);
 
   return (
