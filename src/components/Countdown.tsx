@@ -30,7 +30,7 @@ function Countdown() {
   return (
     <div className='mr-10 p-10 bg-[#f1fa8c] bg-opacity-80 rounded-2xl flex flex-col items-center'>
       <div>
-        <h1 className='text-4xl text-center mb-6 font-mono'>//countify</h1>
+        <h1 className='text-4xl text-center mb-6 font-mono'>୵୵countify</h1>
         <input className='text-center text-6xl w-32 h-32 pl-7 pr-4 font-mono text-[#ff79c6] bg-gray-900 rounded-2xl'
           type="number"
           value={minutes}
@@ -44,7 +44,7 @@ function Countdown() {
         />
       </div>
       <div className='flex flex-row'>
-      <h6 className='font-mono px-2 pt-6 text-[#282a36]'>//controls:</h6>
+      <h6 className='font-mono px-2 pt-6 text-[#282a36]'>⚙ ctrls</h6>
       <button className='font-mono px-4 pt-6 text-[#282a36] hover:text-[#ff79c6]' onClick={startTimer}>
         {isActive ? '⏸ Pause' : ' ⏵ Start'}
       </button>
