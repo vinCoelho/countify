@@ -32,6 +32,7 @@ function Player() {
         </button>
       </section>
       { html && <div className='opacity-90' dangerouslySetInnerHTML={{ __html: html }} /> }
+      <h3 className='w-auto max-w-xs bg-[#ff79c6]/70 text-white text-xs rounded-2xl px-3 py-2 font-mono mt-4'>Faça login no Spotify para reproduzir as músicas na íntegra.</h3>
     </div>
   );
 }
