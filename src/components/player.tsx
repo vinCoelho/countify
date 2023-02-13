@@ -26,8 +26,8 @@ function Player() {
   return (
     <div className='w-1/2 text-center flex flex-col sm:items-center'>
       <section className='flex justify-between'>
-        <input className='md:w-auto min-w-0 bg-[#44475a] bg-opacity-50 text-white py-1 px-2 border-2 border-[#ff79c6] font-mono rounded-lg mb-8' type='text' value={input} placeholder='insert a url...' onChange={({ target }: { target: HTMLInputElement }) => setInput(target.value)}></input>
-        <button className='w-38 h-9 py-1.5 px-4 ml-4 font-mono bg-[#ff79c6] rounded-lg text-white' onClick={getList}>
+        <input className='md:w-auto min-w-0 bg-[#44475a] bg-opacity-50 text-white py-1 px-2 border-2 border-[#ff79c6] font-mono rounded-lg mb-8' type='text' value={input} placeholder='insert a url...' onChange={({ target }: { target: HTMLInputElement }) => setInput(target.value)} />
+        <button className='w-38 h-9 py-1.5 px-4 ml-4 font-mono bg-[#ff79c6] rounded-lg text-white disabled:opacity-70' disabled={ input.length <= 24 } onClick={getList}>
           Play!
         </button>
       </section>
