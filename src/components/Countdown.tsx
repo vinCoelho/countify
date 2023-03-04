@@ -89,8 +89,9 @@ function Countdown({
       <div className="flex items-center flex-col">
         <div className="flex mt-6 gap-5">
           <button
-            className="font-mono text-[#282a36] hover:text-white bg-[#ff79c6] px-3 py-1 rounded-lg"
+            className="font-mono text-[#282a36] hover:text-white bg-[#ff79c6] px-3 py-1 rounded-lg disabled:opacity-70 disabled:text-pink-200"
             onClick={startTimer}
+            disabled={minutes === 0 && seconds === 0}
           >
             {isActive ? (
               <span className="flex items-center gap-1">
@@ -115,7 +116,7 @@ function Countdown({
           <audio src={alarm} ref={alarmRef} />
         </div>
         <div className="flex gap-2 items-center mt-4">
-          <input id="stop-music" type="checkbox" checked={ checkbox } onClick={() => setCheckbox((check) => !check)} />
+          <input className="checked:bg-[#ff79c6]" id="stop-music" type="checkbox" checked={ checkbox } onClick={() => setCheckbox((check) => !check)} />
           <label htmlFor="stop-music">
             <span className="font-mono text-sm">Stop music in the end</span>
           </label>
