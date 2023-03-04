@@ -32,7 +32,7 @@ function Countdown({
   };
 
   useEffect(() => {
-    let interval = 0;
+    let interval: ReturnType<typeof setInterval> | number = 0;
     if (isActive) {
       setEnd(false);
       interval = setInterval(() => {
