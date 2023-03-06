@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Countdown from "./components/Countdown";
 import Player from "./components/Player";
-import neonCity from "/src/img/neon-city.jpg";
 import Footer from "./components/Footer";
 
 function App() {
@@ -27,7 +26,7 @@ function App() {
       "sky",
       "space",
     ];
-    
+
     const randomImg = Math.floor(Math.random() * imgClassArr.length);
     const classToAdd = imgClassArr[randomImg];
 
@@ -36,23 +35,14 @@ function App() {
   }, []);
 
   return (
-    <div
-      ref={ bgDiv }
-      className="w-screen"
-      // style={{
-      //   backgroundImage: `url(${neonCity})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "bottom",
-      // }}
-    >
+    <div ref={ bgDiv } className="w-screen">
       <div className="mx-auto w-screen md:gap-8 lg:gap-24 md:max-w-2xl lg:max-w-6xl h-screen flex md:flex-row flex-col items-center justify-evenly">
         <Countdown
-          setEnd={setEnd}
-          setCheckbox={setCheckbox}
-          checkbox={checkbox}
+          setEnd={ setEnd }
+          setCheckbox={ setCheckbox }
+          checkbox={ checkbox }
         />
-        <Player end={end} checkbox={checkbox} />
+        <Player end={ end } checkbox={ checkbox } />
         <Footer />
       </div>
     </div>
