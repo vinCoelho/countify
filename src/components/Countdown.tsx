@@ -11,9 +11,9 @@ function Countdown({
   setEnd,
   setCheckbox,
   checkbox,
-}: {
-  setEnd: React.Dispatch<React.SetStateAction<boolean>>,
-  setCheckbox: React.Dispatch<React.SetStateAction<boolean>>,
+} : {
+  setEnd: React.Dispatch<React.SetStateAction<boolean>>;
+  setCheckbox: React.Dispatch<React.SetStateAction<boolean>>;
   checkbox: boolean;
 }) {
   const [seconds, setSeconds] = useState(0);
@@ -58,7 +58,7 @@ function Countdown({
   }, [isActive, seconds, minutes]);
 
   return (
-    <div className="lg:ml-20 md:ml-10 p-6 md:p-10 mb-8 md:mb-0 bg-[#f1fa8c] bg-opacity-80 rounded-2xl flex flex-col items-center">
+    <div className="lg:ml-20 md:ml-10 p-6 md:p-10 mb-8 md:mb-0 backdrop-blur-sm bg-[#f1fa8c] bg-opacity-75 rounded-2xl flex flex-col items-center">
       <h1 className="md:text-4xl text-3xl text-center mb-4 lg:mb-6 font-mono">
         ୵୵countify
       </h1>
@@ -67,7 +67,7 @@ function Countdown({
           <input
             className="ml-3 outline-none text-center text-4xl lg:text-6xl lg:h-20 lg:w-24 h-12 w-16 font-mono text-[#ff79c6] bg-transparent"
             type="number"
-            value={minutes}
+            value={ minutes }
             onChange={(e) => setMinutes(parseInt(e.target.value))}
           />
           <p className="text-gray-500 font-mono text-sm">minutes</p>
@@ -80,18 +80,18 @@ function Countdown({
           <input
             className="ml-3 outline-none text-center text-4xl lg:text-6xl lg:h-20 lg:w-24 h-12 w-16 font-mono text-[#ff79c6] bg-transparent"
             type="number"
-            value={seconds}
+            value={ seconds }
             onChange={(e) => setSeconds(parseInt(e.target.value))}
           />
           <p className="text-gray-500 font-mono text-sm">seconds</p>
         </article>
       </div>
       <div className="flex items-center flex-col">
-        <div className="flex mt-6 gap-5">
+        <div className="flex mt-6 gap-7">
           <button
             className="font-mono text-[#282a36] hover:text-white bg-[#ff79c6] px-3 py-1 rounded-lg disabled:opacity-70 disabled:text-pink-200"
-            onClick={startTimer}
-            disabled={minutes === 0 && seconds === 0}
+            onClick={ startTimer }
+            disabled={ minutes === 0 && seconds === 0 }
           >
             {isActive ? (
               <span className="flex items-center gap-1">
@@ -107,18 +107,27 @@ function Countdown({
           </button>
           <button
             className="font-mono text-[#282a36] hover:text-[#ff79c6]"
-            onClick={resetTimer}
+            onClick={ resetTimer }
           >
             <span className="flex items-center gap-1">
-              <VscDebugRestart className="mb-0.5" /> Reset
+              <VscDebugRestart className="mb-0.5" />
+              Reset
             </span>
           </button>
-          <audio src={alarm} ref={alarmRef} />
+          <audio src={ alarm } ref={ alarmRef } />
         </div>
         <div className="flex gap-2 items-center mt-4">
-          <input className="checked:bg-[#ff79c6]" id="stop-music" type="checkbox" checked={ checkbox } onClick={() => setCheckbox((check) => !check)} />
+          <input
+            className="checked:bg-[#ff79c6] cursor-pointer"
+            id="stop-music"
+            type="checkbox"
+            checked={ checkbox }
+            onClick={() => setCheckbox((check) => !check)}
+          />
           <label htmlFor="stop-music">
-            <span className="font-mono text-sm">Stop music in the end</span>
+            <span className="font-mono text-sm cursor-pointer">
+              Stop music in the end
+            </span>
           </label>
         </div>
       </div>
